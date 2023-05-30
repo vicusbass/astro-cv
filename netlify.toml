@@ -4,9 +4,8 @@ command = "astro build"
 functions = "netlify/functions"
 publish = "dist"
 
-[[plugins]] 
-[plugins.inputs.postBuild]
-enable = true
-  
-[plugin.inputs]
-enable = false
+[[plugins]]
+package = "netlify-plugin-lighthouse"
+
+  [plugins.inputs]
+  output_path = "reports/lighthouse.html"
