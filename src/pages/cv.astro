@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+import EducationTimeLineElement from "../components/cv/EducationTimeLine.astro";
+import { getCollection } from "astro:content";
+
+let skills = [
+  "Automation Testing",
+  "Performance Testing",
+  "Javascript",
+  "Typescript",
+  "Python",
+  "Java",
+  "Playwright",
+  "Cypress",
+  "Selenium",
+  "Pytest",
+  "k6.io",
+  "Microservices",
+];
+
+const jobs = (await getCollection("job")).sort(
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
+);
+---
+
+<BaseLayout title="Resume">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    I have extensive experience in Testing, with a strong emphasis on Automation
+    Testing. After spending 6 years working with financial market software
+    products, I transitioned to a startup environment. Since then, I have had
+    the opportunity to work with startups at various stages. I genuinely enjoy
+    the process of identifying areas that can be improved and breaking things in
+    order to make them better. I believe in going beyond the confines of a job
+    description and doing whatever is necessary to enhance products and create a
+    happier team. This might involve setting up serverless AWS projects or
+    writing node services for Production Monitoring – I am always ready to
+    tackle whatever is needed.
+    <br />
+    Look at me, I am even coding an Astro-based site here.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <EducationTimeLineElement
+      title="Software Engineer"
+      subtitle="2016 to 2020, at UBB-FSEGA, Cluj-Napoca, Romania"
+    />
+    <EducationTimeLineElement
+      title="Electrical Engineer"
+      subtitle="1997 to 2002, at Universitatea Tehnică din Cluj-Napoca, Cluj-Napoca, Romania"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    {
+      jobs.map((job) => (
+        <TimeLineElement
+          title={job.data.title}
+          company={job.data.company}
+          companyUrl={job.data.companyUrl}
+          startDate={job.data.startDate}
+        />
+      ))
+    }
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="#" target="_blank"> M101JS - MongoDB for Node.js Developers</a>
+    </li>
+    <li>
+      <a href="#" target="_blank"> Certified Scrum Master</a>
+    </li>
+    <li>
+      <a href="#" target="_blank"> ISTQB - Foundation Level</a>
+    </li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills (not limited to)</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  company?: string;
+  companyUrl?: string;
+  startDate: Date;
+}
+import dayjs from "dayjs";
+const { title, subtitle, company, companyUrl, description, startDate } =
+  Astro.props;
+---
+
+<div class="flex">
+  <div class="education__time">
+    <span class="w-4 h-4 bg-primary block rounded-full mt-1"></span>
+    <span
+      class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"
+    ></span>
+  </div>
+  <div class="experience__data bd-grid px-5">
+    <h3 class="font-semibold mb-1">{title}</h3>
+    <span class="font-light text-sm">
+      at <a target="_blank" href={companyUrl}>{company}</a>
+      from {dayjs(startDate).format("MMM YYYY")}
+    </span>
+    <span class="font-light text-sm">{subtitle}</span>
+    <p class="my-2 text-justify">
+      {description}
+    </p>
+  </div>
+</div>

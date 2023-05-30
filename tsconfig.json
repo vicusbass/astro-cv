@@ -1,4 +1,8 @@
 {
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "strictNullChecks": true
+  },
   "compilerOptions": {
     // Enable top-level await, and other modern ESM features.
     "target": "ESNext",
