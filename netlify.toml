@@ -1,13 +1,12 @@
 # example netlify.toml
 [build]
-  command = "astro build"
-  functions = "netlify/functions"
-  publish = "dist"
+command = "astro build"
+functions = "netlify/functions"
+publish = "dist"
 
 [[plugins]] 
-
-  [plugins.inputs.postBuild]
-    enable = true
+[plugins.inputs.postBuild]
+enable = true
   
-  [plugin.inputs]
-    enable = false
+[plugin.inputs]
+enable = false
