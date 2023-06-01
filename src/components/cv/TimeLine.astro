@@ -6,9 +6,10 @@ interface Props {
   company?: string;
   companyUrl?: string;
   startDate: Date;
+  endDate?: Date;
 }
 import dayjs from "dayjs";
-const { title, subtitle, company, companyUrl, description, startDate } =
+const { title, subtitle, company, companyUrl, description, startDate, endDate } =
   Astro.props;
 ---
 
@@ -24,6 +25,7 @@ const { title, subtitle, company, companyUrl, description, startDate } =
     <span class="font-light text-sm">
       at <a target="_blank" href={companyUrl}>{company}</a>
       from {dayjs(startDate).format("MMM YYYY")}
+      to {endDate ? dayjs(endDate).format("MMM YYYY") : "..."}
     </span>
     <span class="font-light text-sm">{subtitle}</span>
     <p class="my-2 text-justify">
