@@ -7,10 +7,19 @@ interface Props {
   companyUrl?: string;
   startDate: Date;
   endDate?: Date;
+  slug?: string;
 }
 import dayjs from "dayjs";
-const { title, subtitle, company, companyUrl, description, startDate, endDate } =
-  Astro.props;
+const {
+  title,
+  subtitle,
+  company,
+  companyUrl,
+  description,
+  startDate,
+  endDate,
+  slug,
+} = Astro.props;
 ---
 
 <div class="flex">
@@ -21,9 +30,9 @@ const { title, subtitle, company, companyUrl, description, startDate, endDate } 
     ></span>
   </div>
   <div class="experience__data bd-grid px-5">
-    <h3 class="font-semibold mb-1">{title}</h3>
+    <h3 class="font-semibold mb-1"><a href=`/job/${slug}`>{title}</a></h3>
     <span class="font-light text-sm">
-      at <a target="_blank" href={companyUrl}>{company}</a>
+      at <a class="link" target="_blank" href={companyUrl}>{company}</a>
       from {dayjs(startDate).format("MMM YYYY")}
       to {endDate ? dayjs(endDate).format("MMM YYYY") : "..."}
     </span>

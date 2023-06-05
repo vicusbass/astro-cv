@@ -1,0 +1,32 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import { JobSchema } from "../../content/config";
+import JobLayout from "../../layouts/JobLayout.astro";
+
+export async function getStaticPaths() {
+  const jobEntries = await getCollection("job");
+  return jobEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"job">;
+}
+
+const { entry } = Astro.props;
+const job: JobSchema = entry.data;
+const { Content } = await entry.render();
+---
+
+<JobLayout
+  title={job.title}
+  description={job.description}
+  company={job.company}
+  companyUrl={job.companyUrl}
+  startDate={job.startDate}
+  endDate={job.endDate}
+>
+  <Content />
+</JobLayout>

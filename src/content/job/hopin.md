@@ -3,7 +3,7 @@ title: "Staff Software Developer Engineer in Test"
 company: "Hopin"
 companyUrl: "https://hopin.com"
 startDate: "Apr 2021"
-endDate: "Apr 2021"
+endDate: "Apr 2022"
 ---
 
 - Implemented UI/API smoke tests in a FE monorepo using `Playwright`

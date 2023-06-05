@@ -17,6 +17,8 @@ let skills = [
   "Pytest",
   "k6.io",
   "Microservices",
+  "SQL",
+  "MongoDB",
 ];
 
 const jobs = (await getCollection("job")).sort(
@@ -60,7 +62,9 @@ const jobs = (await getCollection("job")).sort(
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="text-3xl w-full font-bold">
+      Experience (click on title for details)
+    </div>
   </div>
 
   <div class="time-line-container mb-10">
@@ -72,6 +76,8 @@ const jobs = (await getCollection("job")).sort(
           companyUrl={job.data.companyUrl}
           startDate={job.data.startDate}
           endDate={job.data.endDate ? job.data.endDate : undefined}
+          description={job.data.description ? job.data.description : undefined}
+          slug={job.slug}
         />
       ))
     }

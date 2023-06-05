@@ -10,3 +10,5 @@ startDate: "Apr 2022"
 - Implemented `Vue` component testing using `Vitest`
 - API testing with `Karate`
 - Performance testing with `k6.io`
+- Optimizations on CI/CD `Gitlab` pipelines
+- Generate analytics reports on `Databricks`
