@@ -1,2 +1,2 @@
-export const SITE_TITLE = 'Vasile Pop Astro-based CV'
-export const SITE_DESCRIPTION = 'The time has come to have my portofolio as a site and I went for Astro. Sure, we all have LinkedIn, but...'
+export const SITE_TITLE = 'Vasile Pop CV - Made with Astro'
+export const SITE_DESCRIPTION = 'SDET, QA Engineer, Dad, Husband and Musician'
