@@ -14,7 +14,15 @@ const {
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<script>
+  import Swup from "swup";
+  import SwupSlideTheme from "@swup/slide-theme";
+  import SwupHeadPlugin from "@swup/head-plugin";
+  import SwupA11yPlugin from "@swup/a11y-plugin";
+  const swup = new Swup({
+    plugins: [new SwupA11yPlugin(), new SwupHeadPlugin(), new SwupSlideTheme()],
+  });
+</script>
 <html lang="en" data-theme="lofi">
   <head>
     <BaseHead title={title} description={description} image={image} />
@@ -25,7 +33,7 @@ const {
       <div class="drawer-content flex flex-col bg-base-100">
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center">
-          <main class="p-6 pt-10 max-w-[900px]">
+          <main id="swup" class="p-6 pt-10 max-w-[900px]">
             <slot />
           </main>
         </div>
