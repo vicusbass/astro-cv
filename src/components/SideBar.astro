@@ -1,5 +1,9 @@
 ---
 import { Image } from "@astrojs/image/components";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+const activeClass = "bg-base-300";
 ---
 
 <div class="drawer-side bg-base-200">
@@ -28,10 +32,34 @@ import { Image } from "@astrojs/image/components";
     </div>
     <ul class="grow shrink">
       <!-- Sidebar content here -->
-      <li><a id="home" href="/">Home</a></li>
-      <li><a id="projects" href="/projects">Projects</a></li>
-      <li><a id="cv" href="/cv">CV</a></li>
-      <li><a id="blog" href="/blog">Blog</a></li>
+      <li>
+        <a id="home" class={currentPath === "" ? activeClass : ""} href="/"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          id="projects"
+          class={currentPath === "projects" ? activeClass : ""}
+          href="/projects">Projects</a
+        >
+      </li>
+      <li>
+        <a
+          id="cv"
+          class={currentPath === "cv" || currentPath.includes("job")
+            ? activeClass
+            : ""}
+          href="/cv">CV</a
+        >
+      </li>
+      <li>
+        <a
+          id="blog"
+          class={currentPath.includes("blog") ? activeClass : ""}
+          href="/blog">Blog</a
+        >
+      </li>
       <li><a href="mailto:vasile.pop@gmail.com">Contact</a></li>
     </ul>
     <div class="social-icons px-4 my-2 flex self-center">
@@ -114,28 +142,3 @@ import { Image } from "@astrojs/image/components";
     </div>
   </div>
 </div>
-
-<script>
-  const homeLink = document.getElementById("home");
-  const projectsLink = document.getElementById("projects");
-  const cvLink = document.getElementById("cv");
-  const blogLink = document.getElementById("blog");
-
-  var isHome = true;
-
-  const url = window.location.href;
-
-  const pages = [projectsLink, cvLink, blogLink];
-
-  const activeClass = "bg-base-300"; // For primary color replace with `active` class
-
-  pages.forEach((elem) => {
-    if (elem?.id && url.includes(elem.id)) {
-      isHome = false;
-      elem?.classList.add(activeClass);
-    }
-  });
-  if (isHome) {
-    homeLink?.classList.add(activeClass);
-  }
-</script>
