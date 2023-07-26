@@ -14,8 +14,11 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" data-theme="lofi">
+<html lang="en">
   <head>
+    <script is:inline>
+      document.querySelector("html").setAttribute("data-theme", "lofi");
+    </script>
     <BaseHead title={title} description={description} image={image} />
   </head>
   <body>
