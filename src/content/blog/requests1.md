@@ -5,7 +5,7 @@ pubDate: "Apr 19 2019"
 tags: ["Python", "REST", "Automation"]
 ---
 
-When testing REST upload endpoints in the past, I often had to make numerous tweaks to combine file upload as multipart with certain tags. However, as a Python enthusiast nowadays, I can't help but smile when I see how easy it is to accomplish this using the requests library.
+When testing REST upload endpoints in the past, I often had to make numerous tweaks to combine file upload as multipart with certain tags. However, as a Python enthusiast nowadays, I can't help but smile when I see how easy it is to accomplish this using the `requests` library.
 
 Let's consider a scenario where you need to perform a POST request for uploading a CSV file, and inform the backend about the specific name associated with this resource. I believe the following code is self-explanatory.
 
