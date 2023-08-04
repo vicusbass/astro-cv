@@ -3,6 +3,7 @@ title: "Senior Software Engineer in Test"
 company: "LeadIQ"
 companyUrl: "https://leadiq.com"
 startDate: "Apr 2022"
+endDate: "Jul 2023"
 ---
 
 Empowering businesses to streamline their lead generation and sales processes through intelligent prospecting, data enrichment, and CRM integration - and making sure it works GREAT
