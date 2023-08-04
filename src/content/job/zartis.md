@@ -1,6 +1,5 @@
 ---
-title: "Senior QA Engineer"
-company: "Zartis"
+title: "Senior QA Engineer - Consultant
 companyUrl: "https://zartis.com"
 startDate: "Aug 2023"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Senior Software Engineer in Test"
+title: "Senior Software Engineer in Test - Consultant"
 company: "LeadIQ"
 companyUrl: "https://leadiq.com"
 startDate: "Apr 2022"

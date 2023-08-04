@@ -1,5 +1,5 @@
 ---
-title: "Staff Software Developer Engineer in Test"
+title: "Staff Software Developer Engineer in Test - Consultant"
 company: "Hopin"
 companyUrl: "https://hopin.com"
 startDate: "Apr 2021"
