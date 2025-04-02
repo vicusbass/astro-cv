@@ -10,7 +10,7 @@ const { title, description, pubDate, updatedDate, heroImage, badge } =
   Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 //TODO add tags somewhere
 ---
 
@@ -20,7 +20,6 @@ import { Image } from "@astrojs/image/components";
       {
         heroImage && (
           <Image
-            aspectRatio={"16:9"}
             width={750}
             height={422}
             format="webp"

@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
@@ -19,7 +19,6 @@ const activeClass = "bg-base-300";
           <div>
             <Image
               class="mask mask-circle"
-              aspectRatio="1:1"
               format="webp"
               width={300}
               height={300}
