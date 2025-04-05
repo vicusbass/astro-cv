@@ -77,7 +77,7 @@ const jobs = (await getCollection("job")).sort(
           startDate={job.data.startDate}
           endDate={job.data.endDate ? job.data.endDate : undefined}
           description={job.data.description ? job.data.description : undefined}
-          slug={job.slug}
+          slug={job.id}
         />
       ))
     }

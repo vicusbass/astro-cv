@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from 'astro/loaders';
 
 const blogSchema = z.object({
   title: z.string(),
@@ -23,8 +24,12 @@ const jobSchema = z.object({
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type JobSchema = z.infer<typeof jobSchema>;
 
-const blogCollection = defineCollection({ schema: blogSchema });
-const jobCollection = defineCollection({ schema: jobSchema });
+const blogCollection = defineCollection({ 
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/blog" }),
+    schema: blogSchema });
+const jobCollection = defineCollection({ 
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/job" }),
+    schema: jobSchema });
 
 export const collections = {
   blog: blogCollection,

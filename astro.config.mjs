@@ -1,14 +1,15 @@
 import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 
-import image from "@astrojs/image";
+import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
+import tailwindcss from "@tailwindcss/vite";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://vicusbass.com",
-  integrations: [mdx(), sitemap(), tailwind(), image()]
+  integrations: [sitemap(), mdx()],
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
