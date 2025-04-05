@@ -10,9 +10,5 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   site: "https://vicusbass.com",
-  integrations: [mdx(), sitemap(), tailwind(), image({
-    serviceEntryPoint: "@astrojs/image/sharp",
-    cacheDir: "./.cache/image",
-    logLevel: "debug"
-  })]
+  integrations: [mdx(), sitemap(), tailwind(), image()]
 });

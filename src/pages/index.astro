@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
+import { healthAcademyLogo, butAScratch } from "../images";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -39,7 +40,7 @@ const last_posts = posts.slice(0, 3);
 
   <HorizontalCard
     title="HealthAcademy"
-    img="/HealthAcademyLogo.png"
+    img={healthAcademyLogo}
     desc="A site for the marvelous HealthAcademy from Cluj."
     url="https://health-academy.ro"
     badge="Web"
@@ -47,7 +48,7 @@ const last_posts = posts.slice(0, 3);
 
   <HorizontalCard
     title="Mounty"
-    img="/but-a-scratch.jpeg"
+    img={butAScratch}
     desc="A Python wrapper for the wonderful Mountebank REST API. Use it for testing your services in isolation."
     url="https://github.com/vicusbass/mounty"
     badge="Python, Testing"
