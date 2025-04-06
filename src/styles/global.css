@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: fantasy --default, cupcake;
+}
 @plugin '@tailwindcss/typography';
 
 
