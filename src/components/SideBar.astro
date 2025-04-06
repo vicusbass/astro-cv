@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 import { profileImage } from "../images";
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -10,7 +10,7 @@ const activeClass = "bg-base-300";
 <div class="drawer-side bg-base-200 lg:drawer-open">
   <label for="my-drawer" class="drawer-overlay bg-base-200"></label>
   <div
-    class="menu flex flex-col flex-nowrap p-4 overflow-y-auto w-[20rem] bg-base-200 text-base-content"
+    class="menu flex flex-col flex-nowrap p-4 overflow-y-auto w-[20rem] bg-base-200 text-base-content min-h-full"
   >
     <div class="w-fit">
       <a href="/">
@@ -20,7 +20,6 @@ const activeClass = "bg-base-300";
           <div>
             <Image
               class="mask mask-circle"
-              aspectRatio="1:1"
               format="webp"
               width={300}
               height={300}
@@ -31,39 +30,42 @@ const activeClass = "bg-base-300";
         </div>
       </a>
     </div>
-    <ul class="grow shrink">
+    <ul class="grow shrink text-lg">
       <!-- Sidebar content here -->
-      <li>
+      <li class="py-1.5">
         <a id="home" class={currentPath === "" ? activeClass : ""} href="/"
           >Home</a
         >
       </li>
-      <li>
+      <li class="py-1.5">
         <a
           id="projects"
           class={currentPath === "projects" ? activeClass : ""}
-          href="/projects">Projects</a
+          href="/projects"
+        >Projects</a
         >
       </li>
-      <li>
+      <li class="py-1.5">
         <a
           id="cv"
           class={currentPath.includes("cv") || currentPath.includes("job")
             ? activeClass
             : ""}
-          href="/cv">CV</a
+          href="/cv"
+        >CV</a
         >
       </li>
-      <li>
+      <li class="py-1.5">
         <a
           id="blog"
           class={currentPath.includes("blog") ? activeClass : ""}
-          href="/blog">Blog</a
+          href="/blog"
+        >Blog</a
         >
       </li>
-      <li><a href="mailto:vasile.pop@gmail.com">Contact</a></li>
+      <li class="py-1.5"><a href="mailto:vasile.pop@gmail.com">Contact</a></li>
     </ul>
-    <div class="social-icons px-4 my-2 flex self-center">
+    <div class="social-icons px-4 my-2 flex self-center mt-auto">
       <a
         href="https://manuelernestog.github.io/support-my-work/"
         target="_blank"
