@@ -30,14 +30,14 @@ const activeClass = "bg-base-300";
         </div>
       </a>
     </div>
-    <ul class="grow shrink">
+    <ul class="grow shrink text-lg">
       <!-- Sidebar content here -->
-      <li>
+      <li class="py-1.5">
         <a id="home" class={currentPath === "" ? activeClass : ""} href="/"
           >Home</a
         >
       </li>
-      <li>
+      <li class="py-1.5">
         <a
           id="projects"
           class={currentPath === "projects" ? activeClass : ""}
@@ -45,7 +45,7 @@ const activeClass = "bg-base-300";
         >Projects</a
         >
       </li>
-      <li>
+      <li class="py-1.5">
         <a
           id="cv"
           class={currentPath.includes("cv") || currentPath.includes("job")
@@ -55,7 +55,7 @@ const activeClass = "bg-base-300";
         >CV</a
         >
       </li>
-      <li>
+      <li class="py-1.5">
         <a
           id="blog"
           class={currentPath.includes("blog") ? activeClass : ""}
@@ -63,7 +63,7 @@ const activeClass = "bg-base-300";
         >Blog</a
         >
       </li>
-      <li><a href="mailto:vasile.pop@gmail.com">Contact</a></li>
+      <li class="py-1.5"><a href="mailto:vasile.pop@gmail.com">Contact</a></li>
     </ul>
     <div class="social-icons px-4 my-2 flex self-center mt-auto">
       <a
