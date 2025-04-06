@@ -2,7 +2,7 @@
   "name": "vicus-astro-cv",
   "description": "Astro based CV",
   "type": "module",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
