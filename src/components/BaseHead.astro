@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
-
+import { ClientRouter } from "astro:transitions";
 export interface Props {
   title: string;
   description: string;
@@ -20,6 +20,8 @@ const { title, description, image = "/social_img.png" } = Astro.props;
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
+<ClientRouter />
+
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
