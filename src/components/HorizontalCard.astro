@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, badge, tags, width = "750", height="563", target = "_blank" } = Astro.props;
+const { title, img, desc, url, badge, width = "750", height="563", target = "_blank" } = Astro.props;
 import { Image } from 'astro:assets';
 ---
 
@@ -23,15 +23,12 @@ import { Image } from 'astro:assets';
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
           {title}
-          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+          {
+            badge &&
+              badge.split(',').map((tag) => <div class="badge badge-secondary mx-2">{tag.trim()}</div>)
+          }
         </h1>
         <p class="py-1 text-1xl">{desc}</p>
-        <div class="card-actions justify-end">
-          {
-            tags &&
-              tags.map((tag) => <div class="badge badge-outline">{tag}</div>)
-          }
-        </div>
       </div>
     </div>
   </a>
