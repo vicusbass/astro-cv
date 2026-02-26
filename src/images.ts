@@ -4,6 +4,8 @@ import butAScratch from './assets/but-a-scratch.jpeg';
 import whale from './assets/whale.svg';
 import nosto from './assets/nosto.svg';
 import symbold from './assets/symbold.png';
+import herniacenter from './assets/herniacenter.png';
+import nextaz from './assets/nextaz.webp';
 
 export {
   profileImage,
@@ -11,5 +13,7 @@ export {
   butAScratch,
   whale,
   nosto,
-  symbold
+  symbold,
+  herniacenter,
+  nextaz
 };
