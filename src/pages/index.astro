@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import { healthAcademyLogo, butAScratch, whale, nosto, symbold } from "../images";
+import { healthAcademyLogo, butAScratch, whale, nosto, symbold, herniacenter, nextaz } from "../images";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -37,6 +37,22 @@ const last_posts = posts.slice(0, 3);
   <div>
     <div class="text-3xl w-full font-bold mb-2">My newest projects 💻</div>
   </div>
+
+  <HorizontalCard
+    title="Hernia Center"
+    img={herniacenter}
+    desc="A medical clinic site specializing in minimally invasive surgical treatment of abdominal hernias, located in Cluj-Napoca."
+    url="https://www.herniacenter.ro/"
+    badge="Web, Medical"
+  />
+
+  <HorizontalCard
+    title="Nextaz"
+    img={nextaz}
+    desc="A modern wine e-commerce site for Nextaz, a Romanian wine producer crafting fresh, accessible wines for young lifestyles."
+    url="https://www.nextaz.ro/"
+    badge="Web, E-commerce"
+  />
 
   <HorizontalCard
     title="Symbold"
